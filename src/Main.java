@@ -1,0 +1,33 @@
+import Track.Track;
+import Track.Format;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int volume = 100;
+        List<Track> playList = new ArrayList<>();
+
+        playList.add(Track.builder().title("track1").album("album1").format(Format.FLAC));
+        playList.add(Track.builder().title("track2").album("album2").format(Format.MP3));
+        playList.add(Track.builder().title("track3").album("album3").format(Format.MP3));
+
+
+        Player player = Player.build()
+                .trackList(playList)
+                .volume(volume);
+
+
+        System.out.println(player);
+        player.play();
+
+        volume = 200;
+        player.volume(volume);
+        System.out.println(player);
+
+    }
+
+}
