@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class CompressedMusicStream implements MusicStream {
 
-    protected byte[] musicStreamBytes;
+    private byte[] musicStreamBytes;
 
     private void compress(byte[] decodedMusicBytes){
         musicStreamBytes = new byte[decodedMusicBytes.length + 1];
@@ -22,5 +22,6 @@ public class CompressedMusicStream implements MusicStream {
     @Override
     public void calculateMusicStream(byte[] decodedMusicBytes) {
         compress(decodedMusicBytes);
+        System.out.println("Compressed music stream created");
     }
 }

@@ -5,11 +5,9 @@ import Track.Track;
 
 public class Decoder {
 
-    protected Track track;
-
-    protected MusicStream musicStream;
-
-    protected byte[] decodedMusicBytes;
+    Track track;
+    private MusicStream musicStream;
+    byte[] decodedMusicBytes;
 
     public MusicStream decode(){
         musicStream.calculateMusicStream(decodedMusicBytes);

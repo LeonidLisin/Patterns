@@ -4,8 +4,8 @@ import Encryptor.Encryptor;
 
 public class EncryptedMusicStream {
 
-    Encryptor encryptor;
-    byte[] encryptedByteStream;
+    private Encryptor encryptor;
+    private byte[] encryptedByteStream;
 
     public void encrypt(MusicStream musicStream){
 

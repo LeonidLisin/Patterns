@@ -35,6 +35,10 @@ public class Main {
         encryptedMusicStream.setEncryptor(encryptor);
         encryptedMusicStream.encrypt(player.getDecodedMusicStream());
 
+        encryptor = EncryptorBuilder.encryptor(EncryptorType.SECOND_TYPE_ENCRYPTOR);
+        encryptedMusicStream.setEncryptor(encryptor);
+        encryptedMusicStream.encrypt(player.getDecodedMusicStream());
+
         player.musicStream(compressedMusicStream);
         player.getDecodedMusicStream();
 
