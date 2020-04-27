@@ -14,8 +14,8 @@ public class EncryptorBuilder {
                 case SECOND_TYPE_ENCRYPTOR:
                     return secondTypeEncryptor;
             }
+            return null;
         }
-        return null;
     }
 
 }
