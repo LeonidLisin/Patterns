@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SimpleMusicStream implements MusicStream {
 
-    private byte[] musicStreamBytes;
+    protected byte[] musicStreamBytes;
 
     @Override
     public byte[] getMusicStreamBytes() {

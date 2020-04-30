@@ -5,6 +5,14 @@ import Track.Track;
 
 public class DecoderBuilder {
 
+    public static Decoder getFlacDecoder() {
+        return flacDecoder;
+    }
+
+    public static Decoder getMp3Decoder() {
+        return mp3Decoder;
+    }
+
     private static final Decoder flacDecoder = new FlacDecoder();
     private static final Decoder mp3Decoder = new Mp3Decoder();
 

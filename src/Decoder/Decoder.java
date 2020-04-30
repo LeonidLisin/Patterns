@@ -3,11 +3,14 @@ package Decoder;
 import MusicStream.MusicStream;
 import Track.Track;
 
+import java.util.Iterator;
+
 public class Decoder {
 
-    Track track;
-    private MusicStream musicStream;
-    byte[] decodedMusicBytes;
+    protected Track track;
+    protected MusicStream musicStream;
+    protected byte[] decodedMusicBytes;
+
 
     public MusicStream decode(){
         musicStream.calculateMusicStream(decodedMusicBytes);
