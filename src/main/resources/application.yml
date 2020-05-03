@@ -1,0 +1,16 @@
+server:
+  servlet:
+    context-path: /playlist
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Patterns?useUnicode=true&characterEncoding=utf8
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: admin
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
