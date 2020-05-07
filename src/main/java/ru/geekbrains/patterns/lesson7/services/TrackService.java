@@ -29,7 +29,7 @@ public class TrackService {
 
     public void saveTrack(TrackDTO trackDTO){
 
-        Format format = formatRepository.findById(2).orElse(null);
+        Format format = formatRepository.findById(Integer.parseInt(trackDTO.getFormatType())).orElse(null);
         Track track = Track.builder().
                 title(trackDTO.getTitle())
                 .album(trackDTO.getAlbum())
