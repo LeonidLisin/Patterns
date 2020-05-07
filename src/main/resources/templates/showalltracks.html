@@ -14,7 +14,7 @@
     <table>
         <tbody>
             <tr th:each="track, iterator : ${tracks}">
-                <!--/*@thymesVar id="track" type="ru.geekbrains.patterns.lesson6.persistence.entities.Track"*/-->
+                <!--/*@thymesVar id="track" type="ru.geekbrains.patterns.lesson7.persistence.entities.Track"*/-->
                 <td th:text="${iterator.index + 1}"></td>
                 <td>
                     <a th:href="@{'/track/' + ${track.id}}">[[ ${track.title} ]]</a>
