@@ -49,7 +49,7 @@ public class PlayListController {
         return trackService.findAllTracks();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("track/{id}")
     public Track showTrack(@PathVariable(value = "id") int id) throws Exception {
         return trackService.findOneTrackById(id);
     }

@@ -8,7 +8,7 @@ import ru.geekbrains.patterns.lesson6.beans.MusicStream.MusicStream;
 
 import java.util.Arrays;
 
-@Component(value = "firstTypeEncryptor")
+@Component("firstTypeEncryptor")
 public class FirstTypeEncryptor extends Encryptor {
 
     @Override
@@ -22,7 +22,7 @@ public class FirstTypeEncryptor extends Encryptor {
         System.arraycopy(sourseByteStream, 0, encryptedByteStream, 1, sourseByteStream.length);
         encryptedByteStream[sourseByteStream.length + 1] = 'e';
         super.encrypt(musicStream);
-        System.out.println("encrypted bytestream: " + Arrays.toString(encryptedByteStream));
+        System.out.println("encrypted byte stream: " + Arrays.toString(encryptedByteStream));
     }
 
     @Override

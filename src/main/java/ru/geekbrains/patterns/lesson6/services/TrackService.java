@@ -2,7 +2,10 @@ package ru.geekbrains.patterns.lesson6.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.geekbrains.patterns.lesson6.persistence.DTO.TrackDTO;
+import ru.geekbrains.patterns.lesson6.persistence.entities.Format;
 import ru.geekbrains.patterns.lesson6.persistence.entities.Track;
+import ru.geekbrains.patterns.lesson6.persistence.repositories.FormatRepository;
 import ru.geekbrains.patterns.lesson6.persistence.repositories.TrackRepository;
 
 import java.util.List;
@@ -12,6 +15,7 @@ import java.util.List;
 public class TrackService {
 
     private final TrackRepository trackRepository;
+    private final FormatRepository formatRepository;
 
     public Track findOneTrackById(int id) throws Exception {
         return trackRepository.findById(id).orElseThrow(
@@ -21,6 +25,18 @@ public class TrackService {
 
     public List<Track> findAllTracks(){
         return trackRepository.findAll();
+    }
+
+    public void saveTrack(TrackDTO trackDTO){
+
+        Format format = formatRepository.findById(2).orElse(null);
+        Track track = Track.builder().
+                title(trackDTO.getTitle())
+                .album(trackDTO.getAlbum())
+                .format(format)
+                .build();
+
+        trackRepository.save(track);
     }
 
 }

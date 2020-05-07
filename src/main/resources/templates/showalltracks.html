@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml" lang="EN">
+    <head>
+        <meta charset="utf-8"/>
+        <title>All tracks</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    </head>
+
+<body>
+
+
+    <table>
+        <tbody>
+            <tr th:each="track, iterator : ${tracks}">
+                <!--/*@thymesVar id="track" type="ru.geekbrains.patterns.lesson6.persistence.entities.Track"*/-->
+                <td th:text="${iterator.index + 1}"></td>
+                <td>
+                    <a th:href="@{'/track/' + ${track.id}}">[[ ${track.title} ]]</a>
+                </td>
+                <td th:text="${track.album}"></td>
+                <td th:text="${track.format}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
