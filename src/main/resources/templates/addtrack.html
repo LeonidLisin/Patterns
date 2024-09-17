@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml" lang="EN">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Tracks</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div style="text-align: center;">
+                <h1>Добавьте новый трек</h1>
+            </div>
+            <hr>
+            <br>
+
+            <form action="#" th:action="@{/addtrack}" method="POST" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <input type="text" name="title" class="form-control" placeholder="Название трека">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type="text" name="album" class="form-control" placeholder="Альбом">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <select name="formatType" class="form-control">
+                            <option th:each="format, iterator : ${formats}"
+                                th:value="${format.getId()}"
+                                th:text="${format.getType()}">
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">добавить трек</button>
+            </form>
+        </div>
+    </body>
+</html>
